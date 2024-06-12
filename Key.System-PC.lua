@@ -1,5 +1,7 @@
 -- Not Mine, Credits to Gamer Scripter
 
+setclipboard("https://discord.gg/PF36rvJXN4")
+
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
@@ -88,11 +90,11 @@ CheckKeyCorner.CornerRadius = UDim.new(0, 5)
 CheckKeyCorner.Parent = CheckKey
 
 GetKey.MouseButton1Click:Connect(function()
-   setclipboard("Your Way How To Get The Key")
+   setclipboard("https://discord.gg/PF36rvJXN4")
 end)
 
 local function validateKey(key)
-    return key == "Key" -- Replace this with your key
+    return key == "bytehubontoplmao" -- Replace this with your key
 end
 
 CheckKey.MouseButton1Click:Connect(function()
@@ -102,9 +104,8 @@ CheckKey.MouseButton1Click:Connect(function()
         TextBox.Text = ""
         wait(1)
         ScreenGui:Destroy()
-
 -- Put Your Script Here
-loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/DamThien332/TPS-Script/main/PC-Version.lua'))()
 
     else
         TextBox.PlaceholderText = "Invalid key. Try again."
