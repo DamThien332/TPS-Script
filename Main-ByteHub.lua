@@ -1,4 +1,4 @@
---Pode Skiddar fudido, coisa facil de fazer :c
+--Pode Skiddar fudido, coisa facil de fazer :cc
 
 -- Importar serviços
 local TweenService = game:GetService("TweenService")
