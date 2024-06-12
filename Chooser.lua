@@ -143,7 +143,7 @@ end)
 Pc.MouseButton1Click:Connect(function()
   animateOut()
   wait(0.1)
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/PC-Version.lua"))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Key.System-PC.lua"))()
 end)
 
 Mobile.MouseButton1Click:Connect(function()
