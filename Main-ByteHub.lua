@@ -99,7 +99,7 @@ function animateFrameIn()
   frame.Position = UDim2.new(0.5, -175, 1.5, -125) -- Posição abaixo da tela
   frame.Visible = true -- Certifique-se de que o quadro esteja visível antes da animação
   local endPosition = UDim2.new(0.5, -175, 0.5, -125) -- Posição original
-  local tweenInfo = TweenInfo.new(2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0) -- Ajustar duração para 1 segundo
+  local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0) -- Ajustar duração para 1 segundo
   local tween = TweenService:Create(frame, tweenInfo, {Position = endPosition})
   tween:Play()
 end
@@ -107,7 +107,7 @@ end
 -- Função para animar a saída do frame
 function animateFrameOut()
   local endPosition = UDim2.new(0.5, -175, 1.5, -125) -- Posição abaixo da tela
-  local tweenInfo = TweenInfo.new(2, Enum.EasingStyle.Quint, Enum.EasingDirection.In, 0, false, 0) -- Ajustar duração para 1 segundo
+  local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.In, 0, false, 0) -- Ajustar duração para 1 segundo
   local tween = TweenService:Create(frame, tweenInfo, {Position = endPosition})
   tween:Play()
   tween.Completed:Connect(function()
