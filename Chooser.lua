@@ -84,7 +84,7 @@ Mobile.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Mobile.Position = UDim2.new(0.5, 0, 0, 195)
 Mobile.Size = UDim2.new(0, 190, 0, 40)
 Mobile.Font = Enum.Font.SourceSans
-Mobile.Text = "Mobile"
+Mobile.Text = "Mobile:Patched"
 Mobile.TextColor3 = Color3.fromRGB(255, 255, 255)
 Mobile.TextSize = 23
 
