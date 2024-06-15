@@ -1,117 +1,155 @@
--- Not Mine, Credits to Gamer Scripter
+--//Made By DamThien\\--
+_G.Primary = Color3.fromRGB(70, 200, 255)
+_G.Dark = Color3.fromRGB(30, 30, 30)
 
-setclipboard("https://discord.gg/PF36rvJXN4")
+local Alert = loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Notification.lua"))()
+
+Alert:create("Welcome to Byte Hub")
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 local Frame = Instance.new("Frame")
-Frame.Size = UDim2.new(0, 400, 0, 300)
-Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-Frame.BorderSizePixel = 0
-Frame.Active = true
-Frame.Draggable = true
 Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = _G.Dark
+Frame.BackgroundTransparency = 0
+Frame.Position = UDim2.new(0.370578766, 0, 0.300341278, 0)
+Frame.Size = UDim2.new(0, 360, 0, 200)
 
 local FrameCorner = Instance.new("UICorner")
-FrameCorner.CornerRadius = UDim.new(0, 10)
 FrameCorner.Parent = Frame
+FrameCorner.CornerRadius = UDim.new(0, 5)
 
-local Close = Instance.new("TextButton")
-Close.Size = UDim2.new(0, 40, 0, 40)
-Close.Position = UDim2.new(1, -40, 0, 0)
-Close.BackgroundTransparency = 1
-Close.Text = "×"
-Close.TextScaled = true
-Close.TextColor3 = Color3.fromRGB(150, 150, 150)
-Close.Parent = Frame
-Close.MouseButton1Click:Connect(function()
-   ScreenGui:Destroy()
+local FrameLine = Instance.new("Frame")
+FrameLine.Parent = Frame
+FrameLine.BackgroundColor3 = _G.Primary
+FrameLine.BackgroundTransparency = 0
+FrameLine.Position = UDim2.new(0, 10, 0, 60)
+FrameLine.Size = UDim2.new(0, 340, 0, 1)
+
+local logo = Instance.new("ImageLabel")
+logo.Name = "logo"
+logo.Parent = Frame
+logo.BackgroundTransparency = 1
+logo.Position = UDim2.new(0, 10, 0, 5)
+logo.Size = UDim2.new(0, 50, 0, 50)
+logo.Image = "rbxassetid://17872490085" --Logo do BYTE HUB
+logo.ImageColor3 = _G.Primary
+
+local logoDc = Instance.new("ImageButton")
+logoDc.Name = "Dc"
+logoDc.Parent = Frame
+logoDc.BackgroundTransparency = 1
+logoDc.Position = UDim2.new(0, 300, 0, 5)
+logoDc.Size = UDim2.new(0, 50, 0, 50)
+logoDc.Image = "rbxassetid://12817601924"
+logoDc.ImageColor3 = _G.Primary
+
+logoDc.MouseButton1Click:Connect(function()
+    Frame.Visible = false
 end)
 
-local Title = Instance.new("TextLabel")
-Title.Size = UDim2.new(1, 0, 0, 30)
-Title.Position = UDim2.new(0, 0, 0.05, 0)
-Title.Text = "Key System"
-Title.TextSize = 18
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1
-Title.Parent = Frame
+local key = Instance.new("ImageLabel")
+key.Name = "key"
+key.Parent = Frame
+key.BackgroundTransparency = 1
+key.Position = UDim2.new(0, 15, 0, 80)
+key.Size = UDim2.new(0, 50, 0, 50)
+key.Image = "rbxassetid://12817057882"
+key.ImageColor3 = _G.Primary
 
-local Instructions = Instance.new("TextLabel")
-Instructions.Size = UDim2.new(1, 0, 0, 30)
-Instructions.Position = UDim2.new(0, 0, 0.2, 0)
-Instructions.Text = "Enter Key To Access The Script"
-Instructions.TextSize = 13
-Instructions.TextColor3 = Color3.fromRGB(150, 150, 150)
-Instructions.BackgroundTransparency = 1
-Instructions.Parent = Frame
-
-local TextBox = Instance.new("TextBox")
-TextBox.Size = UDim2.new(0.8, 0, 0.2, 0)
-TextBox.Position = UDim2.new(0.1, 0, 0.4, 0)
-TextBox.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-TextBox.PlaceholderText = "Enter Key..."
-TextBox.Text = ""
-TextBox.TextSize = 18
-TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextBox.Parent = Frame
-
-local TextBoxCorner = Instance.new("UICorner")
-TextBoxCorner.CornerRadius = UDim.new(0, 5)
-TextBoxCorner.Parent = TextBox
+local KeyBox = Instance.new("TextBox")
+KeyBox.Name = "KeyBox"
+KeyBox.Parent = Frame
+KeyBox.BackgroundColor3 = _G.Primary
+KeyBox.BackgroundTransparency = 1
+KeyBox.Position = UDim2.new(0, 75, 0, 90)
+KeyBox.Size = UDim2.new(0, 265, 0, 35)
+KeyBox.Font = Enum.Font.SourceSans
+KeyBox.Text = "Enter key here..."
+KeyBox.TextXAlignment = Enum.TextXAlignment.Left
+KeyBox.TextColor3 = Color3.fromRGB(200, 200, 200)
+KeyBox.TextSize = 14.000
+KeyBox.ClearTextOnFocus = true
+KeyBox.ClipsDescendants = true
 
 local GetKey = Instance.new("TextButton")
-GetKey.Size = UDim2.new(0.35, 0, 0.15, 0)
-GetKey.Position = UDim2.new(0.1, 0, 0.7, 0)
-GetKey.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-GetKey.Text = "Get Key"
-GetKey.TextSize = 18
-GetKey.TextColor3 = Color3.fromRGB(150, 150, 150)
+GetKey.Name = "GetKey"
 GetKey.Parent = Frame
-
-local GetKeyCorner = Instance.new("UICorner")
-GetKeyCorner.CornerRadius = UDim.new(0, 5)
-GetKeyCorner.Parent = GetKey
-
-local CheckKey = Instance.new("TextButton")
-CheckKey.Size = UDim2.new(0.35, 0, 0.15, 0)
-CheckKey.Position = UDim2.new(0.55, 0, 0.7, 0)
-CheckKey.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-CheckKey.Text = "Check Key"
-CheckKey.TextSize = 18
-CheckKey.TextColor3 = Color3.fromRGB(150, 150, 150)
-CheckKey.Parent = Frame
-
-local CheckKeyCorner = Instance.new("UICorner")
-CheckKeyCorner.CornerRadius = UDim.new(0, 5)
-CheckKeyCorner.Parent = CheckKey
+GetKey.BackgroundColor3 = _G.Primary
+GetKey.BackgroundTransparency = .8
+GetKey.Position = UDim2.new(0, 15, 0, 150)
+GetKey.Size = UDim2.new(0, 160, 0, 35)
+GetKey.Text = "Get Key"
+GetKey.Font = Enum.Font.GothamSemibold
+GetKey.TextColor3 = Color3.fromRGB(200, 200, 200)
+GetKey.TextSize = 15.000
 
 GetKey.MouseButton1Click:Connect(function()
-   setclipboard("https://discord.gg/PF36rvJXN4")
+setclipboard("https://discord.gg/PF36rvJXN4")
+Alert:create("Link Copied!")
 end)
 
-local function validateKey(key)
-    return key == "ByteHubIsForever" -- Replace this with your key
+local Enter = Instance.new("TextButton")
+Enter.Name = "Enter"
+Enter.Parent = Frame
+Enter.BackgroundColor3 = _G.Primary
+Enter.BackgroundTransparency = .8
+Enter.Position = UDim2.new(0, 185, 0, 150)
+Enter.Size = UDim2.new(0, 160, 0, 35)
+Enter.Text = "Check Key"
+Enter.Font = Enum.Font.GothamSemibold
+Enter.TextColor3 = Color3.fromRGB(200, 200, 200)
+Enter.TextSize = 15.000
+
+local TextLabel = Instance.new("TextLabel")
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0, 80, 0, 5)
+TextLabel.Size = UDim2.new(0, 200, 0, 50)
+TextLabel.Text = "Byte Hub | Get Key"
+TextLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.TextSize = 20.000
+
+local function EnableDrag(frame)
+    local dragging
+    local dragStart
+    local startPos
+    
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragging = true
+            dragStart = input.Position
+            startPos = frame.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+    
+    frame.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+            local delta = input.Position - dragStart
+            frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
 end
 
-CheckKey.MouseButton1Click:Connect(function()
-    local enteredKey = TextBox.Text
-    if validateKey(enteredKey) then
-        TextBox.PlaceholderText = "Correct Key!"
-        TextBox.Text = ""
-        wait(1)
-        ScreenGui:Destroy()
--- Put Your Script Here
-loadstring(game:HttpGet('https://raw.githubusercontent.com/DamThien332/TPS-Script/main/PC-Version.lua'))()
+EnableDrag(Frame)
 
-    else
-        TextBox.PlaceholderText = "Invalid key. Try again."
-        TextBox.Text = ""
+Enter.MouseButton1Click:Connect(function()
+    if KeyBox.Text == 'ByteHubIsForever' then
+        Frame.Visible = false
+        Alert:create("Valid Key!")
         wait(1)
-        TextBox.PlaceholderText = "Enter Key..."
-        TextBox.Text = ""
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/PC-Version.lua"))()
+    else
+        Alert:create("Invalid Key!")
     end
 end)
+--//Made By DamThien\\--
