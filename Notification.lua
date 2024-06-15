@@ -1,3 +1,4 @@
+--Made by Skinny
 local AlertFrame = Instance.new("ScreenGui")
 AlertFrame.Name = "AlertFrame"
 AlertFrame.Parent = game.CoreGui
@@ -36,7 +37,7 @@ function Alert:create(desc)
     Image.BackgroundTransparency = 1.000
     Image.Position = UDim2.new(0, 8, 0, 8)
     Image.Size = UDim2.new(0, 45, 0, 45)
-    Image.Image = "rbxassetid://17664264110" 
+    Image.Image = "rbxassetid://17872490085" 
     
     Title.Parent = Frame
     Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
