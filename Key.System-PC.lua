@@ -94,7 +94,7 @@ GetKey.MouseButton1Click:Connect(function()
 end)
 
 local function validateKey(key)
-    return key == "bytehubontoplmao" -- Replace this with your key
+    return key == "ByteHubIsForever" -- Replace this with your key
 end
 
 CheckKey.MouseButton1Click:Connect(function()
