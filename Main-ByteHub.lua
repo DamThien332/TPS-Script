@@ -43,7 +43,7 @@ icon.Position = UDim2.new(0.77, -100, 0.10, 0) -- Movido mais para a direita, al
 icon.AnchorPoint = Vector2.new(0.5, 0)
 icon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
-icon.Image = "rbxassetid://17824828704"
+icon.Image = "rbxassetid://18236527010"
 icon.Parent = frame
 
 -- Loading text
@@ -104,10 +104,9 @@ function animateFrameIn()
   tween:Play()
 end
 
--- Função para animar a saída do frame
 function animateFrameOut()
   local endPosition = UDim2.new(0.5, -175, 1.5, -125) -- Posição abaixo da tela
-  local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.In, 0, false, 0) -- Ajustar duração para 1 segundo
+  local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.In, 0, false, 0) 
   local tween = TweenService:Create(frame, tweenInfo, {Position = endPosition})
   tween:Play()
   tween.Completed:Connect(function()
@@ -115,8 +114,6 @@ function animateFrameOut()
   end)
 end
 
-
--- Função para animar o brilho e escurecimento do ícone
 function animateIconBrightness()
     while true do
         TweenService:Create(icon, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
@@ -126,6 +123,6 @@ function animateIconBrightness()
     end
 end
 
-animateFrameIn() -- Iniciar animação de entrada
+animateFrameIn()
 spawn(animateLoadingBar)
 spawn(animateIconBrightness)
