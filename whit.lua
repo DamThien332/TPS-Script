@@ -4,5 +4,6 @@ return {
   "79770C1D-E597-433B-9D82-F0BB585978A3", --Never
   "9bf06f54-f69a-4e8b-9e21-e962f915f1dd", --Never
   "c85868a1-90b7-43d4-930b-c1d0ff9c56ea", --Perm Acess
+  "f05dc9f4-7592-4507-99d5-322570fc1bfe", --Perm Acess
   "f92f80fe-5bfc-44c9-90b4-5fc8ea245f3d", -- <@536614933501050890> 30/07
 }
