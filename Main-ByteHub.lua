@@ -1,6 +1,23 @@
 --Pode Skiddar fudido, coisa facil de fazer :cc
+repeat wait(1) until game:IsLoaded()
+local ByteHubNotify = function(Text_i,Duration_i)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Byte Hub V2",
+        Text = Text_i,
+        Duration = Duration_i,
+        Icon = "rbxassetid://17872490085"
+    })
+end
+--Key
+wait(0.1)
+ByteHubNotify("Thanks for using Byte Hub!",5)
+wait(0.1)
+ByteHubNotify("Premium Script Byte Hub Avaible on Discord, GO BUY!",10)
+wait(0.1)
+ByteHubNotify("PRICE 80 ROBUX!!!",5)
+wait(0.1)
+ByteHubNotify("GO BUY BROOO",5)
 
--- Importar serviços
 local TweenService = game:GetService("TweenService")
 
 -- ScreenGui object
