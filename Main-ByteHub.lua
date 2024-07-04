@@ -1,4 +1,3 @@
---Pode Skiddar fudido, coisa facil de fazer :cc
 repeat wait(1) until game:IsLoaded()
 local ByteHubNotify = function(Text_i,Duration_i)
     game.StarterGui:SetCore("SendNotification", {
@@ -60,7 +59,7 @@ icon.Position = UDim2.new(0.77, -100, 0.10, 0) -- Movido mais para a direita, al
 icon.AnchorPoint = Vector2.new(0.5, 0)
 icon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
-icon.Image = "rbxassetid://18236527010"
+icon.Image = "rbxassetid://17386989978"
 icon.Parent = frame
 
 -- Loading text
