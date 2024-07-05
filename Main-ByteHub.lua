@@ -6,6 +6,7 @@ local LOAD = Instance.new("Frame")
 local LOGO = Instance.new("TextLabel")
 local Drop = Instance.new("ImageLabel")
 local TOTEXT = Instance.new("TextLabel")
+--
 LoadUI.Name = "LoadUI"
 LoadUI.Parent = game.CoreGui
 SUCCESS.Name = "SUCCESS"
