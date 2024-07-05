@@ -1,144 +1,106 @@
-repeat wait(1) until game:IsLoaded()
-local ByteHubNotify = function(Text_i,Duration_i)
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "Byte Hub V2",
-        Text = Text_i,
-        Duration = Duration_i,
-        Icon = "rbxassetid://17872490085"
-    })
+local LoadUI = Instance.new("ScreenGui")
+local SUCCESS = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local IN = Instance.new("Frame")
+local LOAD = Instance.new("Frame")
+local LOGO = Instance.new("TextLabel")
+local Drop = Instance.new("ImageLabel")
+local TOTEXT = Instance.new("TextLabel")
+LoadUI.Name = "LoadUI"
+LoadUI.Parent = game.CoreGui
+SUCCESS.Name = "SUCCESS"
+SUCCESS.Parent = LoadUI
+SUCCESS.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+SUCCESS.Position = UDim2.new(0.344470978, 0, 0.349606305, 0)
+SUCCESS.Size = UDim2.new(0.311058074, 0, 0.299212605, 0)
+UICorner.Parent = SUCCESS
+IN.Name = "IN"
+IN.Parent = SUCCESS
+IN.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+IN.BackgroundTransparency = 0.5
+IN.BorderSizePixel = 0
+IN.Position = UDim2.new(0, 0, 0.542105258, 0)
+IN.Size = UDim2.new(1, 0, 0.147368416, 0)
+IN.ZIndex = 2
+LOAD.Name = "LOAD"
+LOAD.Parent = SUCCESS
+LOAD.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+LOAD.BorderSizePixel = 0
+LOAD.Position = UDim2.new(0, 0, 0.542105258, 0)
+LOAD.Size = UDim2.new(0.0639386177, 0, 0.147368416, 0)
+LOAD.ZIndex = 3
+LOGO.Name = "LOGO"
+LOGO.Parent = SUCCESS
+LOGO.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LOGO.BackgroundTransparency = 1
+LOGO.Position = UDim2.new(0.25, 0, 0.2, 0)
+LOGO.Size = UDim2.new(0.5, 0, 0.263157904, 0)
+LOGO.Font = Enum.Font.LuckiestGuy
+LOGO.Text = "Byte Hub"
+LOGO.TextColor3 = Color3.fromRGB(255, 255, 255)
+LOGO.TextScaled = true
+LOGO.TextSize = 14
+LOGO.TextWrapped = true
+Drop.Name = "Drop"
+Drop.Parent = SUCCESS
+Drop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Drop.BackgroundTransparency = 1
+Drop.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Drop.Position = UDim2.new(0.28187114, 0, 0.163157895, 0)
+Drop.Size = UDim2.new(0.132856071, 0, 0.262992293, 0)
+Drop.Image = "rbxassetid://0"
+Drop.ImageColor3 = Color3.fromRGB(255, 255, 255)
+TOTEXT.Name = "TOTEXT"
+TOTEXT.Parent = SUCCESS
+TOTEXT.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TOTEXT.BackgroundTransparency = 1
+TOTEXT.Position = UDim2.new(0.166240424, 0, 0.768421054, 0)
+TOTEXT.Size = UDim2.new(0.667519152, 0, 0.157894731, 0)
+TOTEXT.Font = Enum.Font.SourceSans
+TOTEXT.TextColor3 = Color3.fromRGB(255, 255, 255)
+TOTEXT.TextScaled = true
+TOTEXT.TextSize = 14
+TOTEXT.TextWrapped = true
+TOTEXT.Text = "Loading..."
+wait(4)
+TOTEXT.Text = "Verify Game Nickname..."
+wait(6)
+TOTEXT.Text = "Verify Game Support..."
+local sp = false
+local supportedPlaceIds = {335760407, 13762482705, 13804242208, 13804254727} --Normal,Ranked 50,200,500
+if table.find(supportedPlaceIds, game.PlaceId) then
+    sp = true
+else
+    TOTEXT.Text = "Game Not Supported :("
+    game:GetService("TweenService"):Create(SUCCESS, TweenInfo.new(0.5), {Size = UDim2.new(0, 0, 0, 0)}):Play()
+    wait(0.5)
+    LoadUI:Destroy()
+    wait(3)
+    Notif.New("Game Not Supported :(", 10)
 end
---Key
-wait(0.1)
-ByteHubNotify("Thanks for using Byte Hub!",5)
-wait(0.1)
-ByteHubNotify("Premium Script Byte Hub Avaible on Discord, GO BUY!",10)
-wait(0.1)
-ByteHubNotify("PRICE 80 ROBUX!!!",5)
-wait(0.1)
-ByteHubNotify("GO BUY BROOO",5)
-
-local TweenService = game:GetService("TweenService")
-
--- ScreenGui object
-local gui = Instance.new("ScreenGui")
-gui.Name = "CustomLoader"
-gui.ResetOnSpawn = false -- Evitar resetar o GUI quando o jogador reaparece
-gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
--- Frame
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 350, 0, 250) -- Tamanho original
-frame.Position = UDim2.new(0.5, -175, 0.5, -125) -- Posição original
-frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-frame.Active = true
-frame.Draggable = true
-frame.Parent = gui
-
--- UICorner of the frame
-local corner = Instance.new("UICorner")
-corner.CornerRadius = UDim.new(0, 5)
-corner.Parent = frame
-
--- Close button
-local closeButton = Instance.new("TextButton")
-closeButton.Size = UDim2.new(0, 20, 0, 20) -- Tamanho original
-closeButton.Position = UDim2.new(1, -30, 0, 10) -- Posição original
-closeButton.BackgroundTransparency = 1
-closeButton.TextColor3 = Color3.new(1, 1, 1)
-closeButton.TextSize = 12 -- Tamanho original
-closeButton.Text = "x"
-closeButton.MouseButton1Click:Connect(function()
-    animateFrameOut()
-end)
-closeButton.Parent = frame
-
--- Icon
-local icon = Instance.new("ImageButton")
-icon.Size = UDim2.new(0, 150, 0, 150) -- Tamanho original
-icon.Position = UDim2.new(0.77, -100, 0.10, 0) -- Movido mais para a direita, altere isso nao porra
-icon.AnchorPoint = Vector2.new(0.5, 0)
-icon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
-icon.Image = "rbxassetid://17386989978"
-icon.Parent = frame
-
--- Loading text
-local loadingText = Instance.new("TextLabel")
-loadingText.Size = UDim2.new(0.8, 0, 0, 30) -- Tamanho original
-loadingText.Position = UDim2.new(0.1, 0, 0.76, 0) -- Posição original
-loadingText.BackgroundColor3 = Color3.new(0, 0, 0)
-loadingText.BackgroundTransparency = 1
-loadingText.TextColor3 = Color3.new(1, 1, 1)
-loadingText.TextSize = 14 -- Tamanho original
-loadingText.Font = Enum.Font.SourceSansBold
-loadingText.Text = "Loading Script..."
-loadingText.Parent = frame
-
--- Loading bar frame
-local loadingBarFrame = Instance.new("Frame")
-loadingBarFrame.Size = UDim2.new(0.6, 0, 0, 10) -- Tamanho original
-loadingBarFrame.Position = UDim2.new(0.025, 0, 0.9, 0) -- Posição original
-loadingBarFrame.AnchorPoint = Vector2.new(0, 1)
-loadingBarFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-loadingBarFrame.Parent = frame
-
--- UICorner of the loading bar frame
-local corner_2 = Instance.new("UICorner")
-corner_2.CornerRadius = UDim.new(0, 5)
-corner_2.Parent = loadingBarFrame
-
--- Function to animate the loading bar
-function animateLoadingBar()
-    local progress = 0
-
-    while progress < 100 do
-        progress = progress + 1
-        updateProgress(progress)
-        wait(0.10)
-    end
-    
-    loadingText.Text = "Loading Functions..."
-    wait(2.5)
-    animateFrameOut()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Chooser.lua"))()
+repeat
+    wait()
+until sp == true
+--Animacao
+wait(1)
+game:GetService("TweenService"):Create(LOAD, TweenInfo.new(1), {Size = UDim2.new(0.629, 0, 0.147, 0)}):Play()
+--PC ou Mobile
+if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled then
+    TOTEXT.Text = "Your Device is: PC"
+else
+    TOTEXT.Text = "Your Device is: Mobile"
 end
-
--- Function to update the loading progress
-function updateProgress(progress)
-    loadingBarFrame.Size = UDim2.new(progress / 105, 0, 0, 10)
-    loadingText.Text = "Loading Script:" .. progress .. "%"
+wait(2)
+if code then
+    TOTEXT.Text = "User: " .. game.Players.LocalPlayer.Name .. " | From: " .. code
+else
+    TOTEXT.Text = "User: " .. game.Players.LocalPlayer.Name .. " | From: [?]"
 end
-
-
--- Função para animar a entrada do frame
-function animateFrameIn()
-  frame.Position = UDim2.new(0.5, -175, 1.5, -125) -- Posição abaixo da tela
-  frame.Visible = true -- Certifique-se de que o quadro esteja visível antes da animação
-  local endPosition = UDim2.new(0.5, -175, 0.5, -125) -- Posição original
-  local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.Out, 0, false, 0) -- Ajustar duração para 1 segundo
-  local tween = TweenService:Create(frame, tweenInfo, {Position = endPosition})
-  tween:Play()
-end
-
-function animateFrameOut()
-  local endPosition = UDim2.new(0.5, -175, 1.5, -125) -- Posição abaixo da tela
-  local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Quint, Enum.EasingDirection.In, 0, false, 0) 
-  local tween = TweenService:Create(frame, tweenInfo, {Position = endPosition})
-  tween:Play()
-  tween.Completed:Connect(function()
-      gui:Destroy()
-  end)
-end
-
-function animateIconBrightness()
-    while true do
-        TweenService:Create(icon, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
-        wait(1)
-        TweenService:Create(icon, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {ImageTransparency = 0.5}):Play()
-        wait(1)
-    end
-end
-
-animateFrameIn()
-spawn(animateLoadingBar)
-spawn(animateIconBrightness)
+wait(1)
+TOTEXT.Text = "Sucess! Loading script..."
+game:GetService("TweenService"):Create(LOAD, TweenInfo.new(1), {Size = UDim2.new(1, 0, 0.147, 0)}):Play()
+wait(1)
+game:GetService("TweenService"):Create(SUCCESS, TweenInfo.new(0.5), {Size = UDim2.new(0, 0, 0, 0)}):Play()
+wait(0.5)
+LoadUI:Destroy()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Chooser.lua")()
