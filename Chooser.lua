@@ -40,15 +40,5 @@ Window:Game({
     Creator = "Skinny"
 })
 
-Window:Game({
-    Status = "Patched", 
-    Script = "ai",
-    Custom = {
-        Name = "Blox Fruits Script[SOON]"
-    },
-    UpdateDate = Window:GetDate("Local", "27/06/2024"),
-    Creator = "Skinny"
-})
-
 Window:Initiate()
 --ID TPS:335760407
