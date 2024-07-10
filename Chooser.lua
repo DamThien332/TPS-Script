@@ -36,7 +36,7 @@ Window:Game({
     Custom = {
         Name = "TPS Street Soccer[PC]"
     },
-    UpdateDate = Window:GetDate("Local", "27/06/2024"),
+    UpdateDate = Window:GetDate("Local", "10/07/2024"),
     Creator = "Skinny"
 })
 
