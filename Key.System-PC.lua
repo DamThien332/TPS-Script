@@ -87,7 +87,7 @@ GetKey.TextColor3 = Color3.fromRGB(200, 200, 200)
 GetKey.TextSize = 15.000
 
 GetKey.MouseButton1Click:Connect(function()
-setclipboard("https://discord.gg/PF36rvJXN4")
+setclipboard("https://discord.com/invite/Eh94ypjGcY")
 Alert:create("Link Copied!")
 end)
 
