@@ -143,7 +143,7 @@ end
 EnableDrag(Frame)
 
 Enter.MouseButton1Click:Connect(function()
-    if KeyBox.Text == 'tuhbvdd477Tnbcthb6377773%$2?)+?(;nbbrygg' then
+    if KeyBox.Text == 'tuhbvdd477Tnbcthb6377773%$2?)+?(;nbbryggg' then
         Frame.Visible = false
         Alert:create("Valid Key!")
         wait(1)
