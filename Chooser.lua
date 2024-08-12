@@ -1,3 +1,5 @@
+
+
 --Loader
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
@@ -143,17 +145,17 @@ end)
 Pc.MouseButton1Click:Connect(function()
   animateOut()
   wait(0.1)
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Key.System-PC.lua"))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Skinny-yz/My-Scripts/main/TPS/PC.lua"))()
 end)
 
 Mobile.MouseButton1Click:Connect(function()
   animateOut()
   wait(0.1)
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Mobile-Version.lua"))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Skinny-yz/My-Scripts/main/TPS/Mobile.lua"))()
 end)
 
 Premium.MouseButton1Click:Connect(function()
   animateOut()
   wait(0.1)
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/AutoFarmGoals.lua"))()
+  --soon
 end)
