@@ -1,1 +1,2 @@
-return loadstring(game:HttpGet("https://raw.githubusercontent.com/DamThien332/TPS-Script/main/Chooser.lua"))()
+setclipboard("https://discord.gg/UPWPdPNHbd")
+game.Players.LocalPlayer:Kick("Get new script at https://discord.gg/UPWPdPNHbd (copied in clipboard)")
